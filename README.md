@@ -1,23 +1,22 @@
+# Flask-Minimal
 
-# 🚀 Flask-Minimal
-
-**Flask-Minimal** adalah proyek starter sederhana dan efisien berbasis [Flask](https://flask.palletsprojects.com/) yang dirancang untuk memudahkan pengembangan aplikasi web kecil dan prototipe. Seluruh aplikasi hanya terdiri dari **satu file Python (`app.py`)**, menjadikannya ideal untuk pembelajaran, eksperimen, dan produktivitas tinggi tanpa kompleksitas berlebihan.
-
----
-
-## 🌟 Fitur Utama
-
-* ✅ **Single-file app**: Seluruh logika Flask dalam satu file (`app.py`).
-* 🎨 **Template HTML dasar**: Sudah disertakan struktur HTML, CSS, dan JS minimal.
-* 🧱 **Struktur proyek ringan**: Tidak membingungkan, mudah dipahami siapa saja.
-* ⚡ **Cepat disesuaikan**: Cocok untuk prototipe, demo, atau proyek kecil.
-* 🖥️ **Dapat dijalankan otomatis di server (systemd ready)**.
+**Flask-Minimal** adalah proyek starter ringan berbasis [Flask](https://flask.palletsprojects.com/) yang dirancang untuk mempermudah pembuatan aplikasi web sederhana. Seluruh kode berada dalam satu file utama (`app.py`), membuatnya cocok untuk pembelajaran, prototipe cepat, atau proyek kecil.
 
 ---
 
-## 🛠️ Persiapan
+## Fitur
 
-Jalankan perintah berikut untuk memastikan semua dependensi dasar tersedia:
+* Aplikasi Flask dalam satu file (`app.py`)
+* Struktur HTML, CSS, dan JavaScript dasar
+* Setup sederhana dan mudah dipahami
+* Siap dikembangkan atau dimodifikasi sesuai kebutuhan
+* Dapat dijalankan otomatis saat boot (menggunakan `systemd`)
+
+---
+
+## Persiapan
+
+Pastikan dependensi dasar sudah terpasang:
 
 ```bash
 sudo apt update
@@ -26,41 +25,41 @@ sudo apt install python3 python3-venv python3-pip -y
 
 ---
 
-## 📦 Instalasi
+## Instalasi
 
-1. **Clone repository**:
+1. Clone repository:
 
 ```bash
 git clone https://github.com/yourusername/flask-minimal.git
 cd flask-minimal
 ```
 
-2. **Buat virtual environment (opsional tapi disarankan)**:
+2. Buat dan aktifkan virtual environment:
 
 ```bash
 python3 -m venv venv
 source venv/bin/activate
 ```
 
-3. **Install dependensi**:
+3. Install dependensi:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-4. **Jalankan aplikasi**:
+4. Jalankan aplikasi:
 
 ```bash
 python app.py
 ```
 
-Buka di browser: [http://localhost:5000](http://localhost:5000)
+Aplikasi dapat diakses melalui: [http://localhost:5000](http://localhost:5000)
 
 ---
 
-## 🔄 Menjalankan Otomatis di Server (Contoh: EC2)
+## Menjalankan Otomatis dengan Systemd
 
-### 1. Buat file service systemd:
+### 1. Buat file service
 
 ```ini
 [Unit]
@@ -80,13 +79,13 @@ RestartSec=10
 WantedBy=multi-user.target
 ```
 
-### 2. Simpan & aktifkan:
+### 2. Simpan dan aktifkan service:
 
 ```bash
 sudo nano /etc/systemd/system/flask-app.service
 ```
 
-> Tempel isi file di atas dan simpan (`Ctrl+O`, `Enter`, lalu `Ctrl+X`)
+Lalu:
 
 ```bash
 sudo systemctl daemon-reload
@@ -97,9 +96,7 @@ sudo systemctl status flask-app.service
 
 ---
 
-## ✏️ Penggunaan
-
-Struktur proyek dibuat seminimal mungkin agar mudah dikembangkan:
+## Struktur Proyek
 
 ```
 flask-minimal/
@@ -109,33 +106,17 @@ flask-minimal/
 ├── static/
 │   ├── style.css
 │   └── script.js
-├── venv/ (opsional)
-└── requirements.txt
+├── requirements.txt
+└── venv/ (opsional)
 ```
 
 ---
 
-## 🎨 Kostumisasi
+## Kustomisasi
 
-Modifikasi proyek sesuai kebutuhan Anda:
+Anda bisa mulai mengembangkan proyek ini dengan mengubah:
 
-* 🧾 HTML: `templates/index.html`
-* 🎨 CSS: `static/style.css`
-* ⚙️ JS: `static/script.js`
-* 🧠 Logika Flask: `app.py`
-
----
-
-## 📜 Lisensi
-
-Proyek ini menggunakan [Lisensi MIT](LICENSE). Silakan digunakan, disesuaikan, dan disebarluaskan!
-
----
-
-## 🤝 Kontribusi
-
-Ingin menyumbang ide, memperbaiki bug, atau menambahkan fitur?
-
-* Fork repo ini
-* Buat pull request
-* Atau buka **issue** untuk berdiskusi!
+* HTML → `templates/index.html`
+* CSS → `static/style.css`
+* JavaScript → `static/script.js`
+* Logika aplikasi → `app.py`
